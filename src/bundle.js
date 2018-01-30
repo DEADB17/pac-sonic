@@ -33,14 +33,6 @@ maze.image.onload = ()=> {
   hndl = createjs.Ticker.on('tick', handleTick2);
 };
 
-/* const n = 32;
- * const images = new Array(n);
- * for (let i = 0; i < n; i += 1) {
- *   images[i] = zombie.clone(false);
- *   images[i].y = i * 32;
- *   stage.addChild(images[i]);
- * }*/
-
 createjs.Ticker.framerate = 60;
 createjs.Ticker.timingMode = createjs.Ticker.RAF;
 
@@ -105,16 +97,5 @@ function handleTick2(event) {
 
   acc += step;
 
-  stage.update();
-}
-
-let off = -SPRITE_D;
-
-function handleTick(event) {
-  off += 4
-  if (off > STAGE_W) off = -SPRITE_D;
-  for (let i = 0; i < n; i += 1) {
-    images[i].x = off;
-  }
   stage.update();
 }
