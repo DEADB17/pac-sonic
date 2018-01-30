@@ -22,16 +22,7 @@ zombie2.x = 24 * SPRITE_D;
 zombie2.y =  1 * SPRITE_D;
 
 let hndl;
-let ctx
-
-const canvas = document.createElement('canvas');
-maze.image.onload = ()=> {
-  canvas.width = maze.image.width;
-  canvas.height = maze.image.height;
-  ctx = canvas.getContext('2d');
-  ctx.drawImage(maze.image, 0, 0, maze.image.width, maze.image.height);
-  hndl = createjs.Ticker.on('tick', handleTick2);
-};
+let ctx;
 
 createjs.Ticker.framerate = 60;
 createjs.Ticker.timingMode = createjs.Ticker.RAF;
@@ -49,8 +40,8 @@ OPPOSITE[DIR.dn] = DIR.up;
 OPPOSITE[DIR.lt] = DIR.rt;
 
 function getSurroundings(zom) {
-  const x = (zom.x / 32);
-  const y = (zom.y / 32);
+  const x = zom.x / 32;
+  const y = zom.y / 32;
   const res = [];
   res[DIR.up] = ctx.getImageData(x, y - 1, 1, 1).data[0] === 255;
   res[DIR.rt] = ctx.getImageData(x + 1, y, 1, 1).data[0] === 255;
@@ -64,22 +55,18 @@ let acc = SPRITE_D;
 let dir = DIR.up;
 let dir2 = DIR.rt;
 
-function handleTick2(event) {
+function handleTick2() {
   if (acc === SPRITE_D) {
     acc = 0;
 
-    let alt;
     const surroundings = getSurroundings(zombie);
-    if (!surroundings[dir]) alt = OTHER[dir];
-    else alt = OTHER[OPPOSITE[dir]];
+    let alt = surroundings[dir] ? OTHER[OPPOSITE[dir]] : OTHER[dir];
     alt = alt.filter(it => surroundings[it]);
     if (alt.length > 1) alt = alt.filter(it => it !== OPPOSITE[dir]);
     dir = alt[Math.floor(Math.random() * alt.length)];
 
-    let alt2;
     const surroundings2 = getSurroundings(zombie2);
-    if (!surroundings2[dir2]) alt2 = OTHER[dir2];
-    else alt2 = OTHER[OPPOSITE[dir2]];
+    let alt2 = surroundings2[dir2] ? OTHER[OPPOSITE[dir2]] : OTHER[dir2];
     alt2 = alt2.filter(it => surroundings2[it]);
     if (alt2.length > 1) alt2 = alt2.filter(it => it !== OPPOSITE[dir2]);
     dir2 = alt2[Math.floor(Math.random() * alt2.length)];
@@ -99,3 +86,13 @@ function handleTick2(event) {
 
   stage.update();
 }
+
+const canvas = document.createElement('canvas');
+
+maze.image.onload = () => {
+  canvas.width = maze.image.width;
+  canvas.height = maze.image.height;
+  ctx = canvas.getContext('2d');
+  ctx.drawImage(maze.image, 0, 0, maze.image.width, maze.image.height);
+  hndl = createjs.Ticker.on('tick', handleTick2);
+};
