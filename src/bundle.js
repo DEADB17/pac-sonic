@@ -4,7 +4,13 @@
 const SPRITE_D = 32;
 const STAGE_W = SPRITE_D * 40; // 1280
 const STAGE_H = SPRITE_D * 32; // 1024;
-const stage = new createjs.StageGL('View');
+
+const View = document.createElement('canvas');
+View.width = STAGE_W;
+View.height = STAGE_H;
+document.body.appendChild(View);
+
+const stage = new createjs.StageGL(View);
 
 const zombie = new createjs.Bitmap('zombie.png');
 const zombie2 = zombie.clone();
