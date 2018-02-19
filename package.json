@@ -10,6 +10,7 @@
   "author": "",
   "license": "GPL-3.0",
   "dependencies": {
+    "@types/createjs": "0.0.29",
     "rollup": "^0.55.3"
   }
 }
