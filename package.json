@@ -18,7 +18,8 @@
       "indent-legacy": [
         "warn",
         2
-      ]
+      ],
+      "object-shorthand": ["off"]
     }
   },
   "dependencies": {
