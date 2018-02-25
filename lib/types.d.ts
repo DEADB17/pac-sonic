@@ -27,4 +27,6 @@ declare interface Db2 extends Db {
     kind: DbStage2;
     ctx: CanvasRenderingContext2D;
     tickerHandle: Function;
+    viewMaxX: number;
+    viewMaxY: number;
 }
