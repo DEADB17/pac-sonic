@@ -19,7 +19,13 @@
         "warn",
         2
       ],
-      "object-shorthand": ["off"]
+      "object-shorthand": ["off"],
+      "valid-jsdoc": [
+        "error", {
+          "requireParamDescription": false,
+          "requireReturnDescription": false
+        }
+      ]
     }
   },
   "dependencies": {

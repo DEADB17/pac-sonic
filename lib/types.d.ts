@@ -9,6 +9,13 @@ declare type OtherDirVec = [DirElm, DirElm, DirElm];
 
 
 
+declare type Posn = {
+    x: number;
+    y: number;
+}
+
+
+
 type DbStage1 = 1;
 type DbStage2 = 2;
 
