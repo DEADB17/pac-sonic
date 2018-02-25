@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pngquant --strip --speed 1 --force --output dist/maze.png dist/maze.png
+pngquant --strip --speed 1 --force --output dist/zombie.png dist/zombie.png
