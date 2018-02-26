@@ -1,0 +1,27 @@
+#+OPTIONS: num:nil toc:nil
+#+TITLE: README
+#+DATE: <2018-02-25 Sun>
+#+AUTHOR: DEADB17
+#+EMAIL: deadb17@gmail.com
+#+LANGUAGE: en
+#+CREATOR: Emacs 25.3.3 (Org mode 9.1.6)
+
+
+* PacSoniC
+
+** Architecture
+
+*** Application states
+
+**** Loading
+
+***** Data
+
+***** Events
+- start
+- onLoaded
+
+**** Playing
+***** Data
+
+***** Events
