@@ -16,22 +16,23 @@ declare type Posn = {
 
 
 
-type DbStage1 = 1;
-type DbStage2 = 2;
+type DbStateNone = 'none';
+type DbStateLoading = 'loading';
+type DbStatePlaying = 'playing';
 
-interface Db {
+declare type Db<T> = { state: T }
+
+declare type DbNone = Db<DbStateNone>;
+
+declare type DbLoading = Db<DbStateLoading> & {
+    assets: Map<XMLHttpRequest, {status: number, result: undefined | Blob}>
+};
+
+declare type DbPlaying = Db<DbStatePlaying> & {
     mainCanvas: HTMLCanvasElement;
     stage: createjs.StageGL;
     npc: createjs.Bitmap[];
     maze: createjs.Bitmap;
-}
-
-declare interface Db1 extends Db {
-    kind: DbStage1;
-}
-
-declare interface Db2 extends Db {
-    kind: DbStage2;
     ctx: CanvasRenderingContext2D;
     tickerHandle: Function;
     viewMaxX: number;
