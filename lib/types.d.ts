@@ -1,3 +1,5 @@
+/// <reference path="../node_modules/@types/createjs/index.d.ts" />
+
 type Up = 0;
 type Rt = 1;
 type Dn = 2;
@@ -25,7 +27,7 @@ declare type Db<T> = { state: T }
 declare type DbNone = Db<DbStateNone>;
 
 declare type DbLoading = Db<DbStateLoading> & {
-    assets: Map<XMLHttpRequest, {status: number, result: undefined | Blob}>
+    assets: Map<XMLHttpRequest, {status: number, result: undefined | Blob, key: string}>
 };
 
 declare type DbPlaying = Db<DbStatePlaying> & {
