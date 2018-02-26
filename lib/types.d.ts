@@ -27,7 +27,7 @@ declare type Db<T> = { state: T }
 declare type DbNone = Db<DbStateNone>;
 
 declare type DbLoading = Db<DbStateLoading> & {
-    assets: Map<XMLHttpRequest, {status: number, result: undefined | Blob, key: string}>
+    assets: {[x: string]: {status: number, img: HTMLImageElement}};
 };
 
 declare type DbPlaying = Db<DbStatePlaying> & {
