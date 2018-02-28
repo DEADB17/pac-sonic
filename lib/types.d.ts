@@ -40,3 +40,15 @@ declare type DbPlaying = Db<DbStatePlaying> & {
     viewMaxX: number;
     viewMaxY: number;
 }
+
+
+
+interface Evt {type: string}
+type EvtHandler = (evt: Evt) => void
+declare type CallBacks = {
+    db: DbNone | DbLoading | DbPlaying,
+    onGameUpdate: () => void,
+    onLoadError: EvtHandler,
+    onLoadDone: EvtHandler,
+    start: () => void
+}
