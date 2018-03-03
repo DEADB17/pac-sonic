@@ -1,3 +1,5 @@
+/// <reference path="../node_modules/@types/createjs/index.d.ts" />
+
 type Up = 0;
 type Rt = 1;
 type Dn = 2;
@@ -16,24 +18,37 @@ declare type Posn = {
 
 
 
-type DbStage1 = 1;
-type DbStage2 = 2;
+type DbStateNone = 'none';
+type DbStateLoading = 'loading';
+type DbStatePlaying = 'playing';
 
-interface Db {
+declare type Db<T> = { state: T }
+
+declare type DbNone = Db<DbStateNone>;
+
+declare type DbLoading = Db<DbStateLoading> & {
+    assets: {[x: string]: {status: number, img: HTMLImageElement}};
+};
+
+declare type DbPlaying = Db<DbStatePlaying> & {
     mainCanvas: HTMLCanvasElement;
     stage: createjs.StageGL;
     npc: createjs.Bitmap[];
     maze: createjs.Bitmap;
-}
-
-declare interface Db1 extends Db {
-    kind: DbStage1;
-}
-
-declare interface Db2 extends Db {
-    kind: DbStage2;
     ctx: CanvasRenderingContext2D;
     tickerHandle: Function;
     viewMaxX: number;
     viewMaxY: number;
+}
+
+
+
+interface Evt {type: string}
+type EvtHandler = (evt: Evt) => void
+declare type CallBacks = {
+    db: DbNone | DbLoading | DbPlaying,
+    onGameUpdate: () => void,
+    onLoadError: EvtHandler,
+    onLoadDone: EvtHandler,
+    start: () => void
 }

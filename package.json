@@ -8,12 +8,13 @@
     "eslint": "eslint lib/**/*.js",
     "tsc": "tsc",
     "lint": "npm run eslint; tsc",
-    "bundle": "rollup lib/main.js --o dist/bundle.js --f iife"
+    "bundle": "rollup lib/index.js --o dist/bundle.js --f iife"
   },
   "author": "",
   "license": "GPL-3.0",
   "eslintConfig": {
     "extends": "@deadb17/eslint-config",
+    "env": { "es6": true },
     "rules": {
       "indent-legacy": [
         "warn",
