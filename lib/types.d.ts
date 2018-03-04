@@ -23,6 +23,10 @@ declare type Character = {
     distance: number,
 }
 
+declare type Player = Character & {
+    nextDirection: DirElm;
+}
+
 type DbStateNone = 'none';
 type DbStateLoading = 'loading';
 type DbStatePlaying = 'playing';
@@ -38,7 +42,7 @@ declare type DbLoading = Db<DbStateLoading> & {
 declare type DbPlaying = Db<DbStatePlaying> & {
     mainCanvas: HTMLCanvasElement;
     stage: createjs.StageGL;
-    pc: Character;
+    pc: Player;
     npc: Character[];
     maze: createjs.Bitmap;
     tickerHandle: Function;
