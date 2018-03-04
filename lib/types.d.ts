@@ -54,6 +54,7 @@ interface Evt {type: string}
 type EvtHandler = (evt: Evt) => void
 declare type CallBacks = {
     db: DbNone | DbLoading | DbPlaying,
+    onGameKey: EvtHandler,
     onGameUpdate: () => void,
     onLoadError: EvtHandler,
     onLoadDone: EvtHandler,
