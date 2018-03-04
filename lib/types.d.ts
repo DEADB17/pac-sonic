@@ -46,8 +46,6 @@ declare type DbPlaying = Db<DbStatePlaying> & {
     npc: Character[];
     maze: createjs.Bitmap;
     tickerHandle: Function;
-    viewMaxX: number;
-    viewMaxY: number;
     grid: number[];
     gridWidth: number;
 }
