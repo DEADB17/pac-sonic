@@ -35,10 +35,11 @@ declare type DbPlaying = Db<DbStatePlaying> & {
     stage: createjs.StageGL;
     npc: createjs.Bitmap[];
     maze: createjs.Bitmap;
-    ctx: CanvasRenderingContext2D;
     tickerHandle: Function;
     viewMaxX: number;
     viewMaxY: number;
+    grid: Array<number>;
+    gridWidth: number;
 }
 
 
