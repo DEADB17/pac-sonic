@@ -4,27 +4,71 @@
     <meta charset="utf-8">
     <title>Game</title>
     <style>
+      :root {
+          --footer: #7041b3;
+          --stars: #A8BD3D;
+          --pink: #FF00FF;
+          --blue: #5958D6;
+          --blue-dark: #3D3BCF;
+          --min-space: 32px;
+          --canvas: 512px;
+      }
       html, body {
-          background-color: black;
-          color: silver;
           margin: 0;
           padding: 0;
           border: 0;
-
+          background-color: var(--blue-dark);
+          font-family: sans-serif;
       }
       body {
+          background-color: black;
+          color: silver;
+          border: 16px solid var(--pink);
+          border-top: none;
+          border-bottom: none;
+          min-width: calc(var(--canvas) + var(--min-space));
+          width: 75%;
+          height: 100VH;
+          margin: 0 auto;
           display: flex;
           align-items: center;
-          justify-content: center;
-          height: 100VH;
+          justify-content: space-evenly;
+          flex-direction: column;
+      }
+      h1 {
+          font-size: 4em;
+          margin: var(--min-space) 0;
+      }
+      h1 > span:nth-child(2) {
+          color: var(--pink);
+      }
+      h1 > span:nth-child(3) {
+          color: var(--blue);
+      }
+      h1 > i {
+          font-style: normal;
+          font-size: 0.5em;
+          vertical-align: middle;
+          color: var(--stars);
       }
       canvas {
           display: block;
+          min-width: 512px;
+          min-height: 512px;
+      }
+      footer {
+          width: 512px;
+          margin: var(--min-space) 0;
+          text-align: right;
+          order: 3;
+          color: var(--footer);
       }
     </style>
   </head>
   <body>
     <script src="createjs.min.js"></script>
     <script src="bundle.js"></script>
+    <h1><i>★★★</i> <span>Pac</span><span>Sonic</span> <i>★★★</i></h1>
+    <footer>by Manuel and Leo</footer>
   </body>
 </html>
