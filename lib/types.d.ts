@@ -16,7 +16,12 @@ declare type Posn = {
     y: number;
 }
 
-
+declare type Character = {
+    sprite: createjs.Bitmap;
+    direction: DirElm;
+    velocity: number;
+    distance: number,
+}
 
 type DbStateNone = 'none';
 type DbStateLoading = 'loading';
@@ -33,12 +38,12 @@ declare type DbLoading = Db<DbStateLoading> & {
 declare type DbPlaying = Db<DbStatePlaying> & {
     mainCanvas: HTMLCanvasElement;
     stage: createjs.StageGL;
-    npc: createjs.Bitmap[];
+    npc: Character[];
     maze: createjs.Bitmap;
     tickerHandle: Function;
     viewMaxX: number;
     viewMaxY: number;
-    grid: Array<number>;
+    grid: number[];
     gridWidth: number;
 }
 
