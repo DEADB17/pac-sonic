@@ -38,6 +38,7 @@ declare type DbLoading = Db<DbStateLoading> & {
 declare type DbPlaying = Db<DbStatePlaying> & {
     mainCanvas: HTMLCanvasElement;
     stage: createjs.StageGL;
+    pc: Character;
     npc: Character[];
     maze: createjs.Bitmap;
     tickerHandle: Function;
