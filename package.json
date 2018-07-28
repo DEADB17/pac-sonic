@@ -14,15 +14,20 @@
   "license": "GPL-3.0",
   "eslintConfig": {
     "extends": "@deadb17/eslint-config",
-    "env": { "es6": true },
+    "env": {
+      "es6": true
+    },
     "rules": {
       "indent-legacy": [
         "warn",
         2
       ],
-      "object-shorthand": ["off"],
+      "object-shorthand": [
+        "off"
+      ],
       "valid-jsdoc": [
-        "error", {
+        "error",
+        {
           "requireParamDescription": false,
           "requireReturnDescription": false
         }
