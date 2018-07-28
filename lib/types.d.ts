@@ -52,13 +52,11 @@ declare type DbPlaying = Db<DbStatePlaying> & {
 
 
 
-interface Evt {type: string}
-type EvtHandler = (evt: Evt) => void
 declare type CallBacks = {
     db: DbNone | DbLoading | DbPlaying,
-    onGameKey: EvtHandler,
+    onGameKey: (evt: KeyboardEvent) => void,
     onGameUpdate: () => void,
-    onLoadError: EvtHandler,
-    onLoadDone: EvtHandler,
+    onLoadError: EventListener,
+    onLoadDone: EventListener,
     start: () => void
 }

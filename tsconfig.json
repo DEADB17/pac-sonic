@@ -6,7 +6,7 @@
     "checkJs": true,
     "noEmit": true,
     "types" : ["createjs"],
-    "strictNullChecks": true,
+    "strict": true,
     "allowSyntheticDefaultImports": true
   },
   "include": ["lib/*"],
