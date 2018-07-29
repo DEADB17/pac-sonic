@@ -18,10 +18,6 @@
       "es6": true
     },
     "rules": {
-      "indent-legacy": [
-        "warn",
-        2
-      ],
       "object-shorthand": [
         "off"
       ],
