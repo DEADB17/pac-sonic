@@ -1,5 +1,5 @@
 #+OPTIONS: num:nil toc:nil
-#+TITLE: README
+#+TITLE: PacSonic
 #+DATE: <2018-02-25 Sun>
 #+AUTHOR: DEADB17
 #+EMAIL: deadb17@gmail.com
@@ -7,21 +7,19 @@
 #+CREATOR: Emacs 25.3.3 (Org mode 9.1.6)
 
 
-* PacSoniC
+* Architecture
 
-** Architecture
+** Application states
 
-*** Application states
+*** Loading
 
-**** Loading
+**** Data
 
-***** Data
-
-***** Events
+**** Events
 - start
 - onLoaded
 
-**** Playing
-***** Data
+*** Playing
+**** Data
 
-***** Events
+**** Events
