@@ -56,7 +56,7 @@ declare type CallBacks = {
     db: DbNone | DbLoading | DbPlaying,
     onGameKey: (evt: KeyboardEvent) => void,
     onGameUpdate: () => void,
-    onLoadError: EventListener,
+    onLoadError: ErrorEventHandler,
     onLoadDone: EventListener,
     start: () => void
 }
