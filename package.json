@@ -12,7 +12,7 @@
     "eslint": "^5.12.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.1",
-    "rollup": "^0.63.5",
+    "rollup": "^1.0.2",
     "typescript": "^3.2.2"
   },
   "scripts": {
@@ -20,6 +20,6 @@
     "eslint": "eslint lib/**/*.js",
     "tsc": "tsc",
     "lint": "npm run eslint; tsc",
-    "bundle": "rollup lib/index.js --o docs/bundle.js --f iife"
+    "bundle": "rollup lib/index.js --file docs/bundle.js --format iife"
   }
 }
