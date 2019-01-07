@@ -1,32 +1,12 @@
 {
-  "name": "manu-game",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "eslint lib/**/*.js",
-    "tsc": "tsc",
-    "lint": "npm run eslint; tsc",
-    "bundle": "rollup lib/index.js --o docs/bundle.js --f iife"
-  },
-  "author": "",
+  "name": "pac-sonic",
+  "description": "Browser based game",
+  "version": "1.0.0-alpha.1",
   "license": "GPL-3.0",
-  "eslintConfig": {
-    "extends": "@deadb17/eslint-config",
-    "env": {
-      "es6": true
-    },
-    "rules": {
-      "object-shorthand": [
-        "off"
-      ],
-      "valid-jsdoc": [
-        "off"
-      ]
-    }
-  },
-  "dependencies": {
+  "repository": "github:DEADB17/pac-sonic",
+  "author": "DEADB17",
+  "main": "index.js",
+  "devDependencies": {
     "@deadb17/eslint-config": "^4.0.0-rc.1",
     "@types/createjs": "0.0.29",
     "eslint": "^5.2.0",
@@ -34,5 +14,12 @@
     "eslint-plugin-node": "^7.0.1",
     "rollup": "^0.63.4",
     "typescript": "^2.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint lib/**/*.js",
+    "tsc": "tsc",
+    "lint": "npm run eslint; tsc",
+    "bundle": "rollup lib/index.js --o docs/bundle.js --f iife"
   }
 }
