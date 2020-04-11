@@ -9,14 +9,14 @@
   "devDependencies": {
     "@deadb17/eslint-config": "^6.0.0-rc.1",
     "@types/createjs": "0.0.29",
-    "eslint": "^6.0.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^9.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
     "esm": "^3.2.25",
-    "mocha": "^6.2.0",
-    "rollup": "^1.17.0",
-    "typescript": "^3.5.3",
-    "unexpected": "^11.7.0"
+    "mocha": "^7.1.1",
+    "rollup": "^2.6.0",
+    "typescript": "^3.8.3",
+    "unexpected": "^11.14.0"
   },
   "scripts": {
     "test": "mocha -r esm specs/**/*.spec.js",
